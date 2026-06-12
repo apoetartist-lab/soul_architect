@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魂の設計図 解析セッション | 8star energy work</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --cyan: #00e5ff;
+  --bg-dark: rgba(3, 11, 20, 0.85);
+}
+
+/* =====================
+   iOS対応 — 背景固定専用レイヤー
+   ===================== */
+#cosmo-bg-layer {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background-image: url('1.png'); /* 拡張子を .png に修正 */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* iOS表示安定化の設定 */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+body {
+  font-family: 'Noto Serif JP', serif;
+  color: #f8fafc;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  background: transparent;
+}
+
+.container { width: 100%; max-width: 500px; margin: 0 auto; position: relative; }
+
+.site-header { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; background: rgba(2, 6, 12, 0.7); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.logo { color: #ffffff; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.25em; text-decoration: none; }
+.logo-star { color: var(--cyan); margin-right: 0.3rem; }
+
+section { padding: 5rem 1.5rem; }
+.content-card { background: var(--bg-dark); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 3.5rem 2rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); }
+
+.main-title { font-size: 1.85rem; font-weight: 400; line-height: 1.5; margin-bottom: 2.5rem; color: #ffffff; text-align: center; }
+.sub-headline { font-size: 1.25rem; color: var(--cyan); line-height: 1.6; margin-bottom: 2.5rem; text-align: center; font-weight: 600; }
+.section-title { font-size: 1.5rem; font-weight: 400; color: #ffffff; margin-bottom: 2rem; border-bottom: 1px solid rgba(0, 229, 255, 0.2); padding-bottom: 0.75rem; }
+
+p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; font-weight: 300; margin-bottom: 1.8rem; color: #e2e8f0; text-align: justify; }
+
+.metaphor-box { background: rgba(0, 229, 255, 0.04); border-left: 4px solid var(--cyan); border-radius: 8px; padding: 2rem 1.5rem; margin: 2.5rem 0; }
+.profile-name { font-size: 1.3rem; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
+
+.cta-group { display: flex; flex-direction: column; gap: 1rem; margin: 3rem 0; }
+.btn-action { display: flex; align-items: center; justify-content: center; width: 100%; padding: 1.2rem; border-radius: 8px; font-weight: 700; font-size: 1.1rem; text-decoration: none; color: #fff; }
+.btn-line { background: #06C755; }
+.btn-mail { background: var(--cyan); color: #030b14; }
+.btn-tel { border: 1.5px solid #ffffff; }
+
+.site-footer { background: rgba(2, 6, 12, 0.8); padding: 2.5rem 1.5rem; text-align: center; color: #94a3b8; font-size: 0.75rem; }
+</style>
+</head>
+<body>
+
+<div id="cosmo-bg-layer"></div>
+
+<div class="container">
+  <header class="site-header">
+    <a href="#" class="logo"><span class="logo-star">✦</span>8star energy work</a>
+  </header>
+
+  <section>
+    <div class="content-card">
+      <h1 class="main-title">あなたの「才能と目的地」を<br>読み解く</h1>
+      <div class="sub-headline">「なんだか生きづらい、、」から<br>「だから、”これ”がよかったんだ！」に変わる。</div>
+      <div class="cta-group">
+        <a href="https://lin.ee/wzHb4lV" class="btn-action btn-line">公式LINEから予約・相談する</a>
+        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールでお申し込み</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="content-card">
+      <h2 class="section-title">その違和感、あなたの仕様です</h2>
+      <p>どれだけ頑張っても「どこか噛み合わない」「もっと自分に合う生き方がある気がする」という違和感を抱えていませんか？自分では短所だと思っていること、実はあなたの<strong>最大の長所</strong>かもしれません。</p>
+      <div class="metaphor-box">
+        <p>設計図を見ずに家を建て始めると、後から莫大な修正コストが発生します。魂の設計図を知ることで、人生の準備はもっとスムーズになります。</p>
+      </div>
+      <p>私たち一人ひとりには、生まれ持った才能や、人生で最も輝くための条件が描かれた「魂の設計図」が確実に存在します。</p>
+      <div class="cta-group">
+        <a href="https://lin.ee/wzHb4lV" class="btn-action btn-line">公式LINEで申し込む</a>
+        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールで申し込む</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="content-card">
+      <h2 class="section-title">①「魂の設計図」解析セッション</h2>
+      <p>あなたの生まれた瞬間の星の配置（ホロスコープ）を読み解き、さらに「アストロカード」という視覚的なツールを用いることで、ご自身の現状と今後の方向性を、目で見て直感的に体験していただきます。</p>
+      <div class="profile-block">
+        <div class="profile-name">オラティエ（占星術研究家）</div>
+        <p>元大学理工学系教員。緻密なデータ抽出で、あなたの出生図を割り出します。</p>
+      </div>
+      <div class="profile-block">
+        <div class="profile-name">makiko（魂の翻訳家）</div>
+        <p>複雑な設計図を、日常にすぐ活かせる言葉に翻訳します。アストロカードを通して、強みを引き出します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="content-card">
+      <h2 class="section-title">ご紹介者様 限定のご案内</h2>
+      <p>『魂の設計図（出生図）＋アストロカード展開』<br><strong>特別価格：15,000円（税込）</strong></p>
+      <div class="cta-group">
+        <a href="https://lin.ee/wzHb4lV" class="btn-action btn-line">公式LINEで予約・相談する</a>
+        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールで申し込む</a>
+        <a href="tel:05071173927" class="btn-action btn-tel">お電話：050-7117-3927</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© 8star energy work / STUDIO A POET ARTIST / Makiko</p>
+  </footer>
+</div>
+
+</body>
+</html>
