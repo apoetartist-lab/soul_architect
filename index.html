@@ -10,22 +10,18 @@
 
 :root {
   --cyan: #00e5ff;
-  --bg-dark: rgba(3, 11, 20, 0.85);
+  --bg-dark: rgba(3, 11, 20, 0.52);
 }
 
-/* =====================
-   iOS対応 — 背景固定専用レイヤー
-   ===================== */
 #cosmo-bg-layer {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: -1;
-  background-image: url('1.png'); /* 拡張子を .png に修正 */
+  background-image: url('1.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* iOS表示安定化の設定 */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -40,29 +36,334 @@ body {
 
 .container { width: 100%; max-width: 500px; margin: 0 auto; position: relative; }
 
-.site-header { padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: center; background: rgba(2, 6, 12, 0.7); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.site-header {
+  padding: 1.5rem 2rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(2, 6, 12, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
 .logo { color: #ffffff; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.25em; text-decoration: none; }
 .logo-star { color: var(--cyan); margin-right: 0.3rem; }
 
-section { padding: 5rem 1.5rem; }
-.content-card { background: var(--bg-dark); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 3.5rem 2rem; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); }
+section { padding: 4rem 1.5rem; }
 
-.main-title { font-size: 1.85rem; font-weight: 400; line-height: 1.5; margin-bottom: 2.5rem; color: #ffffff; text-align: center; }
-.sub-headline { font-size: 1.25rem; color: var(--cyan); line-height: 1.6; margin-bottom: 2.5rem; text-align: center; font-weight: 600; }
-.section-title { font-size: 1.5rem; font-weight: 400; color: #ffffff; margin-bottom: 2rem; border-bottom: 1px solid rgba(0, 229, 255, 0.2); padding-bottom: 0.75rem; }
+.content-card {
+  background: var(--bg-dark);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.06), 0 20px 40px rgba(0, 0, 0, 0.5);
+}
 
-p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; font-weight: 300; margin-bottom: 1.8rem; color: #e2e8f0; text-align: justify; }
+/* ヒーローエリア */
+.hero-session-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: rgba(0, 229, 255, 0.7);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.hero-title-main {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+}
+.hero-title-sub {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+.hero-tagline {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+.hero-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(0,229,255,0.4);
+  margin: 1.2rem auto;
+}
+.hero-catch {
+  font-size: 1.1rem;
+  color: var(--cyan);
+  line-height: 1.8;
+  text-align: center;
+  font-weight: 500;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-bottom: 0.5rem;
+}
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.hero-data-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(0,229,255,0.65);
+  text-align: center;
+  line-height: 1.8;
+  border-top: 1px solid rgba(0,229,255,0.12);
+  padding-top: 1.2rem;
+  letter-spacing: 0.04em;
+}
 
-.metaphor-box { background: rgba(0, 229, 255, 0.04); border-left: 4px solid var(--cyan); border-radius: 8px; padding: 2rem 1.5rem; margin: 2.5rem 0; }
-.profile-name { font-size: 1.3rem; font-weight: 600; color: #ffffff; margin-bottom: 0.5rem; }
+/* 見出し：縦線アクセント */
+.section-title {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--cyan);
+  line-height: 1.5;
+}
 
-.cta-group { display: flex; flex-direction: column; gap: 1rem; margin: 3rem 0; }
-.btn-action { display: flex; align-items: center; justify-content: center; width: 100%; padding: 1.2rem; border-radius: 8px; font-weight: 700; font-size: 1.1rem; text-decoration: none; color: #fff; }
+p {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 1.6rem;
+  color: #e2e8f0;
+  text-align: justify;
+}
+
+.em-cyan { color: var(--cyan); font-weight: 500; }
+.em-white { color: #ffffff; font-weight: 500; }
+.em-highlight {
+  display: block;
+  background: rgba(0,229,255,0.08);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #00e5ff;
+  line-height: 1.8;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.metaphor-box {
+  background: rgba(0, 229, 255, 0.04);
+  border-left: 4px solid var(--cyan);
+  border-radius: 0 8px 8px 0;
+  padding: 1.5rem 1.5rem;
+  margin: 2rem 0;
+}
+.metaphor-box p { margin-bottom: 0; }
+
+/* SESSION MENU タイトル */
+.menu-title-block { text-align: center; margin-bottom: 2rem; }
+.menu-title-main {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+.menu-title-session {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+.menu-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  color: rgba(0,229,255,0.6);
+  margin: 1rem 0 0.5rem;
+}
+.menu-content-title {
+  font-size: 1.1rem;
+  color: var(--cyan);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+.menu-future-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+.print-badge {
+  display: inline-block;
+  background: rgba(0,229,255,0.08);
+  border: 1px solid rgba(0,229,255,0.25);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(0,229,255,0.85);
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+}
+
+/* プロフィール */
+.profile-block { margin-bottom: 2rem; }
+.profile-name { font-size: 1.15rem; font-weight: 600; color: #ffffff; margin-bottom: 0.4rem; }
+.profile-title { font-size: 0.78rem; color: rgba(255,255,255,0.5); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; margin-bottom: 0.3rem; letter-spacing: 0.05em; }
+.profile-role { font-size: 0.8rem; color: var(--cyan); letter-spacing: 0.1em; font-family: 'Noto Sans JP', sans-serif; margin-bottom: 0.5rem; }
+.profile-quote {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.7);
+  border-left: 2px solid rgba(0,229,255,0.3);
+  padding-left: 1rem;
+  margin: 0.8rem 0 1rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* おすすめリスト */
+.recommend-list { list-style: none; padding: 0; margin: 1rem 0 2rem; }
+.recommend-list li {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #e2e8f0;
+  padding: 0.7rem 0 0.7rem 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+  line-height: 1.6;
+}
+.recommend-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-size: 0.6rem;
+  top: 0.9rem;
+}
+
+/* 料金ボックス */
+.price-box {
+  background: rgba(0,229,255,0.04);
+  border: 1px solid rgba(0,229,255,0.2);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+.price-menu-name {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+.price-original {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: line-through;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-bottom: 0.3rem;
+}
+.price-main {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+.price-tax { font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.6); }
+.price-note {
+  font-size: 0.75rem;
+  color: var(--cyan);
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-top: 1rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* CTAグループ */
+.cta-group { display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+.btn-action {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; padding: 1.2rem;
+  border-radius: 8px;
+  font-weight: 700; font-size: 1rem;
+  text-decoration: none; color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.05em;
+}
 .btn-line { background: #06C755; }
-.btn-mail { background: var(--cyan); color: #030b14; }
-.btn-tel { border: 1.5px solid #ffffff; }
+.btn-mail { background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.4); }
+.btn-tel { border: 1.5px solid rgba(255,255,255,0.3); background: transparent; }
 
-.site-footer { background: rgba(2, 6, 12, 0.8); padding: 2.5rem 1.5rem; text-align: center; color: #94a3b8; font-size: 0.75rem; }
+.cta-lead {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.site-footer {
+  background: rgba(2, 6, 12, 0.8);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.hero-repeat-box {
+  margin-top: 1.5rem;
+  background: rgba(0,229,255,0.05);
+  border: 1px solid rgba(0,229,255,0.2);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  text-align: center;
+}
+.hero-repeat-q {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+.hero-repeat-body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.8;
+}
+
+.price-value-note {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
 </style>
 </head>
 <body>
@@ -74,54 +375,126 @@ p { font-family: 'Noto Sans JP', sans-serif; font-size: 1.1rem; font-weight: 300
     <a href="#" class="logo"><span class="logo-star">✦</span>8star energy work</a>
   </header>
 
+  <!-- ヒーローセクション -->
   <section>
     <div class="content-card">
-      <h1 class="main-title">あなたの「才能と目的地」を<br>読み解く</h1>
-      <div class="sub-headline">「なんだか生きづらい、、」から<br>「だから、”これ”がよかったんだ！」に変わる。</div>
-      <div class="cta-group">
-        <a href="https://lin.ee/wzHb4lV" class="btn-action btn-line">公式LINEから予約・相談する</a>
-        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールでお申し込み</a>
+      <div class="hero-session-label">SOUL ARCHITECTURE ANALYSIS</div>
+      <div class="hero-title-main">魂の設計図</div>
+      <div class="hero-title-sub">解析セッション</div>
+      <div class="hero-divider"></div>
+      <div class="hero-catch">「なんだか生きづらい、、」から<br>「だから、"これ"がよかったんだ！」に変わる。</div>
+      <div class="hero-sub">あなたの「才能と目的地」を読み解く</div>
+      <div class="hero-data-note">感覚と、天体配置という精密なデータ、<br>両方から自分を知りたい方のためのセッションです。</div>
+      <div class="hero-repeat-box">
+        <div class="hero-repeat-q">なぜか繰り返してしまうこと、ありませんか？</div>
+        <div class="hero-repeat-body">仕事、人間関係、決断のパターン——<br>それは思い込みではなく、あなたの「設計」かもしれません。</div>
       </div>
     </div>
   </section>
 
+  <!-- その違和感セクション -->
   <section style="padding-top: 0;">
     <div class="content-card">
       <h2 class="section-title">その違和感、あなたの仕様です</h2>
-      <p>どれだけ頑張っても「どこか噛み合わない」「もっと自分に合う生き方がある気がする」という違和感を抱えていませんか？自分では短所だと思っていること、実はあなたの<strong>最大の長所</strong>かもしれません。</p>
+      <p>どれだけ頑張っても「どこか噛み合わない」「もっと自分に合う生き方がある気がする」という違和感を抱えていませんか？</p>
+      <div class="em-highlight">自分では短所だと思っていること、<br>実はあなたの長所かもしれません。</div>
+      <div class="em-highlight">宝の持ち腐れしてませんか？もったいない！<br>活かすことで人生が変わります。</div>
       <div class="metaphor-box">
-        <p>設計図を見ずに家を建て始めると、後から莫大な修正コストが発生します。魂の設計図を知ることで、人生の準備はもっとスムーズになります。</p>
+        <p>設計図を見ずに大きな家を建て始めたら、どうなるでしょう。その時の気分で間取りを決め、後から「やっぱり違った」と気づいた時には、修正に莫大なコストと体力が必要になります。最悪、取り返しがつかないことも。でも最初から「全体の設計図」を持っていれば、増改築も引越しも、スムーズに準備できたはずです。</p>
       </div>
-      <p>私たち一人ひとりには、生まれ持った才能や、人生で最も輝くための条件が描かれた「魂の設計図」が確実に存在します。</p>
-      <div class="cta-group">
-        <a href="https://lin.ee/wzHb4lV" class="btn-action btn-line">公式LINEで申し込む</a>
-        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールで申し込む</a>
-      </div>
+      <p><span class="em-cyan">それはあなたが、ご自身の「魂の設計図」とは少し違うルートを歩んでいるかもしれないサインです。</span></p>
+      <p><span class="em-white">私たち一人ひとりには、生まれ持った才能や、人生で最も輝くための条件が描かれた「魂の設計図（ネイタルチャート・出生図）」が存在します。</span></p>
     </div>
   </section>
 
+  <!-- セッション内容セクション -->
   <section style="padding-top: 0;">
     <div class="content-card">
-      <h2 class="section-title">①「魂の設計図」解析セッション</h2>
-      <p>あなたの生まれた瞬間の星の配置（ホロスコープ）を読み解き、さらに「アストロカード」という視覚的なツールを用いることで、ご自身の現状と今後の方向性を、目で見て直感的に体験していただきます。</p>
+      <div class="menu-title-block">
+        <div class="menu-title-main">「魂の設計図」</div>
+        <div class="menu-title-session">解析セッション</div>
+        <div class="menu-label">SESSION MENU</div>
+        <div class="menu-content-title">魂の設計図（出生図）＋アストロカード</div>
+        <div class="menu-future-note">※今後、他のメニューも追加されます</div>
+      </div>
+      <div style="text-align:center; margin-bottom: 1.8rem;">
+        <span class="print-badge">✦ あなたの魂の設計図（出生図＋特徴点）をプリントしてお渡しします</span>
+      </div>
+      <p>本セッションは、あなたが本来持っている資質を正確に抽出し、「明日からどう行動すれば最も自然に自分らしく、生命の炎が生き生き輝き出す毎日が開けるのか」を魂の翻訳家・エネルギーワーカーであるmakikoが具体的にお伝えする時間です。</p>
+      <p>あなたの生まれた瞬間の星の配置（ホロスコープ）を読み解き、さらに「アストロカード」という視覚的なツールを用いることで、ご自身の現状と今後の方向性を、目で見て直感的に、そして<span class="em-cyan">「唯一無二である自分自身」</span>を確認していく時間です。</p>
+    </div>
+  </section>
+
+  <!-- チーム構成セクション -->
+  <section style="padding-top: 0;">
+    <div class="content-card">
+      <h2 class="section-title">確かな裏付けとチーム構成</h2>
+      <p>本セッションは、各分野の専門知識を結集したチーム体制で提供しています。</p>
       <div class="profile-block">
-        <div class="profile-name">オラティエ（占星術研究家）</div>
-        <p>元大学理工学系教員。緻密なデータ抽出で、あなたの出生図を割り出します。</p>
+        <div class="profile-role">データ抽出</div>
+        <div class="profile-name">オラティエ（ホロスコープ研究家）</div>
+        <p>半世紀にわたる研究と実践。元大学理工学系教員があなたの出生図を精緻に割り出します。</p>
       </div>
       <div class="profile-block">
-        <div class="profile-name">makiko（魂の翻訳家）</div>
-        <p>複雑な設計図を、日常にすぐ活かせる言葉に翻訳します。アストロカードを通して、強みを引き出します。</p>
+        <div class="profile-role">セッション担当</div>
+        <div class="profile-name">makiko</div>
+        <div class="profile-title">Soul Poet Artist ／ 魂の翻訳家・エネルギーワーカー・宇宙の設計図読み解き師</div>
+        <div class="profile-quote">「1歳の頃から見えない領域と対話し続けてきた。その35年以上の観測と、ロンドン時代の編集、帰国後のデザイナーとしての経験が、この『翻訳』の精度を支えています。」</div>
+        <p>抽出された複雑な設計図を、現代の日常や仕事、人間関係にすぐ活かせる言葉に翻訳します。アストロカードを展開し、対話を通してあなたの強みを引き出します。スピリチュアルウェルビーイング研究チームを結成し、占星術を活用した見えない領域の可視化と身体感覚との相関を常に検証・アップデートしています。</p>
       </div>
     </div>
   </section>
 
+  <!-- おすすめセクション -->
+  <section style="padding-top: 0;">
+    <div class="content-card">
+      <h2 class="section-title">このような方におすすめ</h2>
+      <ul class="recommend-list">
+        <li>自分の「本当に向いていること（天職・役割）」を知り、そこにエネルギーを集中させたい方</li>
+        <li>人間関係や仕事でのパターンの原因を知り、より楽に生きたい方</li>
+        <li>人生の転機を感じており、背中を押す「確かな羅針盤」が欲しい方</li>
+        <li>自分の持ってるカードを知りたい方</li>
+        <li>自分の隠し持っている宝（特技・魅力）を知りたい方</li>
+        <li>なぜか同じパターンを繰り返してしまう…その原因と、具体的な対処法を知りたい方</li>
+        <li>イベント開催・引越し・転職など、具体的なタイミングの見極めをしたい方</li>
+        <li>今の自分の流れを1年・半年・3ヶ月単位で具体的に知って、次の行動を決めていきたい方</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 365日セクション -->
+  <section style="padding-top: 0;">
+    <div class="content-card">
+      <h2 class="section-title">365日、頑張らなくていい理由が明確に！</h2>
+      <p>365日全力で頑張り続けることは、しんどいです。</p>
+      <p>自分のエネルギーが自然に出る時期、動くべきテーマ、今は休んでいいテーマ——それがわかると、無駄な消耗がなくなります。</p>
+      <p><span class="em-cyan">自分のエネルギーが自然に出る時期、動くべきテーマ、今は休んでいいテーマ——それがわかると、無駄な消耗がなくなります。</span></p>
+      <div class="metaphor-box">
+        <p>「今はこれだけやればいい」<br>
+        「今ここで落ち込まなくていい、私の仕様では今は曇り空だから」<br>
+        「でもこっちは太陽が出てる、行ってみよう」</p>
+      </div>
+      <p>天体のエネルギーを知り、使いこなすことで、驚くほど人生の変化が早くなった——そんな体験をされる方が多くいらっしゃいます。</p>
+      <p>もちろん、設計図に縛られる必要はありません。設計図に載っていない「揺らぎ」も含めて、makikoが寄り添いながら読み解きます。</p>
+    </div>
+  </section>
+
+  <!-- 料金・申込みセクション -->
   <section style="padding-top: 0;">
     <div class="content-card">
       <h2 class="section-title">ご紹介者様 限定のご案内</h2>
-      <p>『魂の設計図（出生図）＋アストロカード展開』<br><strong>特別価格：15,000円（税込）</strong></p>
+      <p>本メニューは、始まったばかりの新しいセッションです。正規料金（25,000円）への移行を予定しておりますが、セミナーや講演で直接ご縁があった方、またご紹介で辿り着かれた皆様へ向けて、特別なご案内をご用意しました。</p>
+      <div class="price-value-note">通常、出生図の精緻な計算だけでも数時間を要します。本セッションはデータ抽出からmakikoによる翻訳・アストロカード展開まで、すべて込みの価格です。</div>
+      <div class="price-box">
+        <div class="price-menu-name">『魂の設計図（出生図）＋アストロカード展開』</div>
+        <div class="price-original">正規料金 25,000円</div>
+        <div class="price-main">15,000<span class="price-tax">円（税込）</span></div>
+        <div class="price-note">※一定数のモニター枠が終了次第、予告なく正規料金へ移行いたします。ご了承ください。</div>
+      </div>
+      <div class="cta-lead">迷いを手放し、あなただけの「本来のルート」の設計を読んでみませんか？</div>
       <div class="cta-group">
         <a href="https://lin.ee/wzHb4lV" class="btn-action btn-line">公式LINEで予約・相談する</a>
-        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールで申し込む</a>
+        <a href="mailto:apoetartist@gmail.com" class="btn-action btn-mail">メールでお申し込み</a>
         <a href="tel:05071173927" class="btn-action btn-tel">お電話：050-7117-3927</a>
       </div>
     </div>
